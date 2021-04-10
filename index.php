@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php
+/**
+ * The main template file
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package seba
+ */
+get_header();
+?>
+        <div class="content-area">
+            <main>
+                <section class="slider">slider</section>
+                <section class="popular-products">popular products</section>
+                <section class="new-arrivals">New arrivals</section>
+                <section class="deal-of-the-week">Deal of the week</section>
+                <section class="news">News</section>
+            </main>
+        </div>
+
+<?php get_footer();?>
+        
