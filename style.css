@@ -10,3 +10,7 @@ License: GNU General Public Licence v3
 License URI:https://www.gnu.org/license/gpl-3.0.html
 Tags:woocomerce,e-commerce, features-images,blog,right-sidebar,sticky-posts,themes-options,gooter-widgets,custom-logo 
 */
+
+.slider{
+    background:blue;
+}
