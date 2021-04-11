@@ -10,7 +10,50 @@ License: GNU General Public Licence v3
 License URI:https://www.gnu.org/license/gpl-3.0.html
 Tags:woocomerce,e-commerce, features-images,blog,right-sidebar,sticky-posts,themes-options,gooter-widgets,custom-logo 
 */
+/*Header - Main menu*/
+.second-column{
+    background-color: green;
+}
+.brand{
+    background-color: hotpink;
+}
+.main-menu ul {
+    padding:0;
+    margin:0;
+    font-size: 18px;
+    font-weight:500;
+    border-radius: 0;
+}
+.main-menu ul li {
+    display: inline;
+    margin:0 5px 0 0;
+}
 
-.slider{
-    background:blue;
+
+/*footer - footer Menu */
+.footer-menu ul, .footer-widgets ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;    
+}
+.footer-menu ul li{
+    display: inline;
+    margin:0 10px 0 0;
+}
+.footer-menu ul li:last-child{
+    margin: 0;
+}
+.footer-menu ul li a{
+    text-decoration: none;
+    color: #939393;
+}
+.footer-menu ul li.current-menu-item a{
+    color:#ff9292;
+}
+
+
+article div{
+    display: block;
+    background-color: red;
 }
