@@ -10,10 +10,13 @@ License: GNU General Public Licence v3
 License URI:https://www.gnu.org/license/gpl-3.0.html
 Tags:woocomerce,e-commerce, features-images,blog,right-sidebar,sticky-posts,themes-options,gooter-widgets,custom-logo 
 */
-/*Header - Main menu*/
-.second-column{
-    background-color: green;
+
+body{
+   /* font-family: 'Dancing Script', cursive;*/
+   font-family: 'Oxygen', sans-serif;
 }
+/*Header - Main menu*/
+
 .brand{
     background-color: hotpink;
 }
@@ -28,7 +31,30 @@ Tags:woocomerce,e-commerce, features-images,blog,right-sidebar,sticky-posts,them
     display: inline;
     margin:0 5px 0 0;
 }
+.main-menu ul li:last-child{
+    margin:0;
+}
+.main-menu.dropdown:hover>.dropdown-menu,
+.main-menu.dropup:hover>.dropdown-menu {
+display: block;
+}
 
+/*Search From*/
+.search-form button{
+    background-image: url('img/search.svg');
+    height: 23px;
+    width: 23px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+}
+.search-form input[type="search"]{
+    background-color: #fff;
+    border: none;
+    font-weight: 500;
+    font-size: 110%;
+    padding: 0.3rem 1rem;
+}
 
 /*footer - footer Menu */
 .footer-menu ul, .footer-widgets ul {

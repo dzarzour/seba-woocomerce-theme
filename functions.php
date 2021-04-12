@@ -8,8 +8,11 @@
  * 
  * */
 
+ //require bootstrap walker
+ require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
  //enqueue all files css and js
 function seba_scripts(){
+    //css ,js bootstrap
     wp_enqueue_script( 
         'bootstrap-js', 
         get_template_directory_uri(  ).'/inc/bootstrap.min.js',
@@ -22,7 +25,10 @@ function seba_scripts(){
             array(),  
             '4.3.1',
             'all');     
-         
+
+      //google fonts
+      wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap|https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap' ) ;     
+     //style.css main style  theme    
     wp_enqueue_style(
          'seba-style', 
          get_stylesheet_uri(), 
