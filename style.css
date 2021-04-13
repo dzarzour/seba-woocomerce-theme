@@ -17,9 +17,6 @@ body{
 }
 /*Header - Main menu*/
 
-.brand{
-    background-color: hotpink;
-}
 .main-menu ul {
     padding:0;
     margin:0;
@@ -40,7 +37,7 @@ display: block;
 }
 
 /*Search From*/
-.search-form button{
+.search-form .search-submit{
     background-image: url('img/search.svg');
     height: 23px;
     width: 23px;
@@ -114,4 +111,21 @@ display: block;
     margin: 0 4px 0 0;
     outline: 0;
     width: 150px;
+}
+.cart .cart-icon{
+    background: url('img/cart.svg');
+    width: 25px;
+    height:25px;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+.cart .items{
+    background-color: #ca24ca;
+    color: #FFF;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: top;
+    display: inline-block;
 }

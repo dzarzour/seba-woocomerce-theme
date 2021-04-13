@@ -60,10 +60,19 @@ function seba_config(){
                 'min_columns'    =>1
             )
      ));
+        //woocomerce gallary support
         add_theme_support( 'wc-product-gallery-zoom' );
         add_theme_support( 'wc-product-gallery-lightbox' );
         add_theme_support( 'wc-product-gallery-slider' );
 
+        //custom logo
+        add_theme_support( 'custom-logo',array(
+            'width'         =>160,
+            'height'        =>85,
+            'flex-width'    =>true,
+            'flex-height'   =>true
+            
+        ));
         if(!isset($content_width)){
             $content_width=600;
         }
@@ -73,5 +82,22 @@ add_action( 'after_setup_theme', 'seba_config',0 );
 //require wc modification file
 if(class_exists('WooCommerce')){
     require get_template_directory().'/inc/wc-modifications.php';
+}
+
+/**
+ * Show cart contents / total Ajax
+ */
+add_filter( 'woocommerce_add_to_cart_fragments', 'seba_woocommerce_header_add_to_cart_fragment' );
+
+function seba_woocommerce_header_add_to_cart_fragment( $fragments ) {
+	global $woocommerce;
+
+	ob_start();
+
+	?>
+	 <span class="items"><?php echo WC()->cart->get_cart_contents_count();?></span>
+	<?php
+	$fragments['span.items'] = ob_get_clean();
+	return $fragments;
 }
 

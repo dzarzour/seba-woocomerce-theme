@@ -21,16 +21,53 @@
         <header>
             <section class="search">
                 <div class="container">
-                <?php get_search_form();?>
+                    <div class="text-center d-md-flex align-items-center">
+                         <?php get_search_form();?>
+                    </div>
                 </div>
             </section>
             <section class="top-bar">
                 <div class="container">
                     <div class="row">
-                    <div class="brand col-12 col-md-3 col-lg-2 text-center text-md-left">Logo</div>
+                    <div class="brand col-12 col-md-3 col-lg-2 text-center text-md-left">
+                        <?php 
+                        if(has_custom_logo()):
+                            ?>  <a href="<?php home_url('/')?>">
+                            <?php
+                            the_custom_logo();?></a><?php
+                        else:
+                            ?>
+                            <p class="site-title"><?php bloginfo( 'title' )?></p>
+                            <span class="site-description"><?php bloginfo( 'description' )?></span>
+                            <?php    
+                        endif;
+                        ?>
+                    </div>
                     <div class="second-column col-12 col-md-9 col-lg-10 ">
                         <div class="row">
-                            <div class="account col-12 ">account</div>
+                            <div class="account col-12 ">
+                                <div class="navbar-expand">
+                                    <ul class="navbar-nav float-left">
+                                       <?php
+                                       if(class_exists('WooCommerce')):
+                                            if(is_user_logged_in()):?>
+                                                <li><a href="<?php echo esc_url(get_permalink( get_option( 'woocommerce_myaccount_page_id') ));?>" class="nav-link">My account</a></li>
+                                                <li><a href="<?php echo esc_url( wp_logout_url( get_permalink( get_option( 'woocommerce_myaccount_page_id') ) ) )?>" class="nav-link">Logout</a></li>
+                                            <?php
+                                            else:    
+                                                ?>
+                                                <li><a href="<?php echo esc_url(get_permalink( get_option( 'woocommerce_myaccount_page_id') ));?>" class="nav-link">Login|Register</a></li>
+                                                
+                                                <?php
+                                                endif;
+                                        endif;?>
+                                         </ul>
+                                </div>
+                                <div class="cart text-right">
+                                    <a href="<?php echo wc_get_cart_url(); ?>"><span class="cart-icon"></span></a>
+                                    <span class="items"><?php echo WC()->cart->get_cart_contents_count();?></span>
+                                </div>
+                            </div>
                                 <div class="col-12 ">
                                     <nav class="main-menu navbar navbar-expand-md navbar-light " role="navigation">
                                         <div class="container">
