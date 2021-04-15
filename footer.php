@@ -22,7 +22,8 @@
             <section class="copyright">
                 <div class="container">
                     <div class="row">
-                        <div class="copyright-text col-12 col-md-6 ">copy right</div>
+                        <div class="copyright-text col-12 col-md-6 "><?php echo get_theme_mod( 'set_copyright', 'copyright by Seba them' ) ?>
+                    </div>
                         <div class="footer-menu col-12 col-md-6 text-left text-md-right">
                             <?php wp_nav_menu( 
                                 array(

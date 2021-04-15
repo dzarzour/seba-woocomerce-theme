@@ -10,6 +10,9 @@
 
  //require bootstrap walker
  require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+
+ //require customizer file
+ require_once get_template_directory().'/inc/customizer.php';
  //enqueue all files css and js
 function seba_scripts(){
     //css ,js bootstrap
