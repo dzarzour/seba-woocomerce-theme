@@ -8,8 +8,7 @@
 get_header();
 ?>
         <div class="content-area">
-            <main>
-                
+            <main>                
                 <div class="container">
                         <div class="row">  
                         <?php 

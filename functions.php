@@ -16,29 +16,21 @@
  //enqueue all files css and js
 function seba_scripts(){
     //css ,js bootstrap
-    wp_enqueue_script( 
-        'bootstrap-js', 
-        get_template_directory_uri(  ).'/inc/bootstrap.min.js',
-         array('jquery'),
-         '4.5.1',
-         true );
-         wp_enqueue_style(
-            'bootstrap-css', 
-            get_template_directory_uri().'/inc/bootstrap.min.css', 
-            array(),  
-            '4.3.1',
-            'all');     
+         wp_enqueue_script( 'bootstrap-js',get_template_directory_uri(  ).'/inc/bootstrap.min.js',array('jquery'),'4.5.1',true );
+         wp_enqueue_style('bootstrap-css',get_template_directory_uri().'/inc/bootstrap.min.css', array(), '4.3.1','all');     
 
-      //google fonts
-      wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap|https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap' ) ;     
-     //style.css main style  theme    
-    wp_enqueue_style(
-         'seba-style', 
-         get_stylesheet_uri(), 
-         array(), 
-         //filemtime(get_template_directory(  ).'/style.css'), 
-         '1.0',
-         'all');
+        //google fonts
+        wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap|https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap' ) ;     
+        //style.css main style  theme    
+        wp_enqueue_style(
+         'seba-style',  get_stylesheet_uri(), array(),  //filemtime(get_template_directory(  ).'/style.css'), 
+          '1.0', 'all');
+
+         //flex slider files
+         wp_enqueue_script( 'flex-slider-min-js',get_template_directory_uri(  ).'/inc/flexslider/jquery.flexslider-min.js', array('jquery'),'', true );
+         wp_enqueue_style( 'flex-slider-css', get_template_directory_uri(  ).'/inc/flexslider/flexslider.css', array(), '1.1', 'all' );
+         wp_enqueue_script( 'flex-slider-js',get_template_directory_uri(  ).'/inc/flexslider/flex-slider.js', array('jquery'),'', true );
+         
 }
 add_action( 'wp_enqueue_scripts', 'seba_scripts' );
 
@@ -79,6 +71,8 @@ function seba_config(){
         if(!isset($content_width)){
             $content_width=600;
         }
+        //custom size for flex slider images
+        add_image_size( 'Seba-slider-Size', '1920', '800', array('center','center') );
 }
 add_action( 'after_setup_theme', 'seba_config',0 );
 
