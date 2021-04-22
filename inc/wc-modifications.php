@@ -24,6 +24,7 @@ function seba_wc_modify(){
         function seba_close_sidebar_tags(){
             echo'</div>';
         }
+        add_action( 'woocommerce_after_shop_loop_item_title', 'the_excerpt',1 );
     }
     
     add_action( 'woocommerce_before_main_content',  'seba_open_shop_tags',9);
@@ -40,7 +41,7 @@ function seba_wc_modify(){
         echo'</div>';
     }
 
-    add_action( 'woocommerce_after_shop_loop_item_title', 'the_excerpt',1 );
+   
 
 }
 add_action( 'wp', 'seba_wc_modify');

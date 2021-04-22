@@ -52,25 +52,73 @@ get_header();
                     </ul>
                   </div>            
                 </section>
+                <?php if(class_exists('WooCommerce')):?>
                 <section class="popular-products">
                     <div class="container">
-                        <h2 class="row">popular products</h2>
-                        <?php echo  do_shortcode( '[products limit="4" columns="4" orderby="popularity"]' );?>
+                         <?php $popular_products_heading=get_theme_mod( 'set_popular_products_heading', 'Popular Products'); ?>
+                        <h2 class="row"><?php echo $popular_products_heading; ?></h2>
+                        <?php  $max_popular_num= get_theme_mod( 'set_popular_max_num', 4 );
+                               $popular_col_num =get_theme_mod( 'set_popular_col_num', 4 );?>
+                        <?php echo  do_shortcode( '[products limit="'.$max_popular_num.'" columns="'.$popular_col_num.'" orderby="popularity"]' );?>
                     </div>
                 </section>
                 <section class="new-arrivals">
                 <div class="container">
-                    <h2 class="row">arrivals products</h2>
-                      <?php echo do_shortcode( '[products limit="4" columns="4" orderby="date"]' );?>
+                <?php $set_new_arrival_products_heading=get_theme_mod( 'set_new_arrival_products_heading', 'New Arrival  Products'); ?>  
+                    <h2 class="row"><?php echo $set_new_arrival_products_heading; ?></h2>
+                      <?php  $set_arrival_max_num=get_theme_mod( 'set_arrival_max_num', 4 );
+                             $set_arrival_col_num=get_theme_mod( 'set_arrival_col_num', 4);
+                      ?>
+                      <?php echo do_shortcode( '[products limit="'.$set_arrival_max_num.'" columns="'.$set_arrival_col_num.'" orderby="date"]' );?>
                     </div>
                 </section>
+                <?php
+                $show_deal=get_theme_mod( 'set_deal_show',0 );
+                $deal     =get_theme_mod( 'set_deal');
+                $currency =get_woocommerce_currency_symbol();
+                $regular  =get_post_meta( $deal, '_regular_price',true );
+                $sale     =get_post_meta( $deal, '_sale_price', true );
+                if($show_deal==1 && (!empty($deal))):
+                  $discount_precentage=absint(100-(($sale/$regular)*100));
+                ?>
                 <section class="deal-of-the-week">
-                <div class="container">
-                        <div class="row">
-                        Deal of the week
+                    <div class="container">
+                      <h2>Deal of the week</h2>
+                        <div class="row d-flex align-items-center"> 
+                          <div class="deal-img col-md-6 col-12 ml-auto text-center">
+                          <?php echo get_the_post_thumbnail( $deal, 'large', array('class' =>'img-fluid') );?>
+                          </div>
+                          <div class=" deal-desc col-md-4 col-12 mr-auto text-center">
+                            <?php if (!empty($sale)):?>
+                            <span class="discount">
+                              <?php echo $discount_precentage.'% OFF'?>
+                            </span>  
+                            <?php endif; ?>
+                            <h3>
+                              <a href="<?php echo get_permalink( $deal ) ?>"><?php echo get_the_title( $deal );?></a>
+                              <p><?php echo get_the_excerpt( $deal )?></p>
+                            </h3>
+                            <div class="price">
+                              <span class="regular">
+                                <?php echo $currency;
+                                      echo $regular?>
+                              </span>
+                              <?php if(!empty($sale)):?>
+                                <span class="sale">
+                                  <?php echo $currency;
+                                        echo $sale?>
+                                </span>  
+                              <?php endif?>
+                            </div>
+                            <a href="<?php echo esc_url( '?add-to-cart='.$deal ); ?>">Add to Cart</a>
+                            
+
+                          </div>
                         </div>
                     </div>
                 </section>
+                <?php endif;?>
+                <?php endif; //woocomerce class excisit?>
                 <section class="news">
                 <div class="container">
                         <div class="row">
