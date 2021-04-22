@@ -9,18 +9,13 @@ get_header();
         <div class="content-area">
             <main>
                 <section class="slider">
-                    <!-- Place somewhere in the <body> of your page -->
-                  <div class="dflexslider">
+                  <div class="flexslider">
                     <ul class="slides">
                     <?php  for ($i=1; $i <4 ; $i++):
                       $slider_page[$i]=get_theme_mod('set_slider_page'.$i);
                       $slider_page_button[$i]=get_theme_mod( 'set_slider_button_text'.$i  );
                       $slider_page_url[$i]=get_theme_mod( 'set_slider_URL'.$i );
                     endfor;
-                      echo "<pre>";
-                      var_dump($slider_page);
-                      echo "</pre>";
-                     echo"66666666666666666666666666666666666666666666666666";
                       //loop
                       $args=array(
                         'post_type'         =>'page',
@@ -29,19 +24,28 @@ get_header();
                         'orderby'           =>'post__in'
                       );
                       $slider_loop=new WP_Query($args);
-                      if(have_posts()):
-                        while(have_posts()):
-                          the_post();
+                      $j=1;
+                      if($slider_loop->have_posts()):
+                        while($slider_loop->have_posts()):
+                          $slider_loop->the_post();
                           ?>
                            <li>
                               <?php the_post_thumbnail(  'Seba-slider-Size',array('class' =>'img-fluid'));?>
+                              <div class="container">
+                                    <div class="slider-details-container">
+                                      <div class="slider-title">
+                                        <h1><?php the_title(); ?></h1>
+                                      </div>
+                                      <div class="slider-description">
+                                        <div class="subtitle"><?php the_content();?></div>
+                                        <a href="<?php echo $slider_page_url[$j]?>" class="link"><?php echo $slider_page_button[$j] ?></a>
+                                      </div>
+                                    </div>
+                              </div>
                           </li>
                           <?php
-                          echo "<pre>";
-                         var_dump($slider_loop);
-                         echo "</pre>";
+                          $j++;
                         endwhile;
-                      
                         wp_reset_postdata();
                       endif;
                     ?>
@@ -49,17 +53,15 @@ get_header();
                   </div>            
                 </section>
                 <section class="popular-products">
-                <div class="container">
-                        <div class="row">
-                        popular products
-                        </div>
+                    <div class="container">
+                        <h2 class="row">popular products</h2>
+                        <?php echo  do_shortcode( '[products limit="4" columns="4" orderby="popularity"]' );?>
                     </div>
                 </section>
                 <section class="new-arrivals">
                 <div class="container">
-                        <div class="row">
-                        New arrivals
-                        </div>
+                    <h2 class="row">arrivals products</h2>
+                      <?php echo do_shortcode( '[products limit="4" columns="4" orderby="date"]' );?>
                     </div>
                 </section>
                 <section class="deal-of-the-week">
