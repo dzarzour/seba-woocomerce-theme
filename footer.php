@@ -15,7 +15,29 @@
             <section class="footer-widgets">
                 <div class="container">
                     <div class="row">    
-                        footer widgets
+                        <?php 
+                        if (is_active_sidebar( 'seba-footer-section-1' )):?>
+                            <div class="col-md-4 col-12">
+                            <?php  dynamic_sidebar( 'seba-footer-section-1' )?>
+                            </div>
+                        <?php
+                        endif;
+                        if (is_active_sidebar( 'seba-footer-section-2' )):?>
+                            <div class="col-md-4 col-12">
+                            <?php  dynamic_sidebar( 'seba-footer-section-2' )?>
+                            </div>
+                        <?php
+                        endif;
+                        if (is_active_sidebar( 'seba-footer-section-3' )):?>
+                            <div class="col-md-4 col-12">
+                            <?php  dynamic_sidebar( 'seba-footer-section-3' )?>
+                            </div>
+                        <?php
+                        endif;
+
+
+
+                        ?>
                     </div>
                 </div>    
             </section>

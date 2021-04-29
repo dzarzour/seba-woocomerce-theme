@@ -71,8 +71,11 @@ function seba_config(){
         if(!isset($content_width)){
             $content_width=600;
         }
+        add_theme_support('post-thumbnails');
+        add_theme_support( 'title-tag' );
         //custom size for flex slider images
-        add_image_size( 'Seba-slider-Size', '1920', '800', array('center','center') );
+        add_image_size( 'Seba-slider-Size', '1920', '400', array('center','center') );
+        add_image_size( 'Seba-blog-Size', '960', '640', array('center','center') );
 }
 add_action( 'after_setup_theme', 'seba_config',0 );
 
@@ -98,3 +101,51 @@ function seba_woocommerce_header_add_to_cart_fragment( $fragments ) {
 	return $fragments;
 }
 
+add_action( 'widgets_init','seba_sidebar' );
+function seba_sidebar(){
+    register_sidebar( array(
+        'name'          =>'Seba Sidebar',
+        'id'            =>'seba-sidebar',
+        'description'   =>'Drag and drop your widget here',
+        'before_widget' =>'<div id="%1$s" class="widget %2$s widget-wrapper">',
+        'after_widget'  =>'</div>',
+        'before-title'  =>'<h4 class="widget-title>',
+        'after-title'  =>'</h4'
+    ));
+    register_sidebar( array(
+        'name'          =>'Seba Sidebar shop',
+        'id'            =>'seba-sidebar-shop',
+        'description'   =>'Drag and drop your widget  for shop page ',
+        'before_widget' =>'<div id="%1$s" class="widget %2$s widget-wrapper">',
+        'after_widget'  =>'</div>',
+        'before-title'  =>'<h4 class="widget-title>',
+        'after-title'  =>'</h4'
+    ));
+    register_sidebar( array(
+        'name'          =>'Seba footer section 1',
+        'id'            =>'seba-footer-section-1',
+        'description'   =>'Drag and drop your widget  for shop page ',
+        'before_widget' =>'<div id="%1$s" class="widget %2$s widget-wrapper">',
+        'after_widget'  =>'</div>',
+        'before-title'  =>'<h4 class="widget-title>',
+        'after-title'  =>'</h4'
+    ));
+    register_sidebar( array(
+        'name'          =>'Seba footer section 2',
+        'id'            =>'seba-footer-section-2',
+        'description'   =>'Drag and drop your widget  for shop page ',
+        'before_widget' =>'<div id="%1$s" class="widget %2$s widget-wrapper">',
+        'after_widget'  =>'</div>',
+        'before-title'  =>'<h4 class="widget-title>',
+        'after-title'  =>'</h4'
+    ));
+    register_sidebar( array(
+        'name'          =>'Seba footer section 3',
+        'id'            =>'seba-footer-section-3',
+        'description'   =>'Drag and drop your widget  for shop page ',
+        'before_widget' =>'<div id="%1$s" class="widget %2$s widget-wrapper">',
+        'after_widget'  =>'</div>',
+        'before-title'  =>'<h4 class="widget-title>',
+        'after-title'  =>'</h4'
+    ));
+}

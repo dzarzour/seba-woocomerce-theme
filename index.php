@@ -10,25 +10,41 @@ get_header();
         <div class="content-area">
             <main>                
                 <div class="container">
-                        <div class="row">  
-                        <?php 
-                        //if there any posts
-                            if(have_posts()):
-                                //load posts
-                            while(have_posts()): the_post();
+                        <div class="row">
+                        <?php get_sidebar(); ?>
+                        <div class="col-lg-9 col-md-8 col-12">
+                            
+                            <?php 
+                            //if there any posts
+                                if(have_posts()):
+                                    //load posts
+                                   
+                                while(have_posts()): the_post();
+                                    ?>
+                                    <?php
+                                     get_template_part( 'template-parts/content' );
+                                      
+                                    ?>
+                                   
+                                    <?php
+                                endwhile;
                                 ?>
-                                <article>
-                                    <h2><?php the_title();?></h2>
-                                    <div><?php the_content();?></div>
-                                </article>
-                                <?php
-                            endwhile;
-                            else:
-                                ?>
-                                <p>No post to display</p>
-                                <?php
-                            endif;
-                        ?>
+                                <div class="vcontainer">
+                                    <?php
+                                    the_posts_pagination(  array(
+                                        'prev_text'    =>__('previous','seba'),
+                                        'next_text'    =>__('Next','seba')
+                                    ));
+                                    
+                                else:
+                                    ?>
+                                    <p>No post to display</p>
+                                    <?php
+                                endif;
+                                
+                            ?>
+                            </div> 
+                           
                         </div>
                     </div>
             </main>

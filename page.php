@@ -23,7 +23,16 @@ get_header();
                             <article class="col">
                                 <h2><?php the_title();?></h2>
                                 <div><?php the_content();?></div>
+                                
                             </article>
+                            <div class="col-12">
+                            <?php
+                            
+                              if(comments_open()||get_comments_number()):
+                                comments_template();
+                            endif;
+                            ?>
+                            </div>
                             <?php
                         endwhile;
                         else:

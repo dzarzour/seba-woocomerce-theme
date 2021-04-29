@@ -53,19 +53,19 @@ get_header();
                   </div>            
                 </section>
                 <?php if(class_exists('WooCommerce')):?>
-                <section class="popular-products">
-                    <div class="container">
+                <section class="popular-products" >
+                    <div class="container" >
                          <?php $popular_products_heading=get_theme_mod( 'set_popular_products_heading', 'Popular Products'); ?>
-                        <h2 class="row"><?php echo $popular_products_heading; ?></h2>
+                        <h2 class="section-title"><?php echo $popular_products_heading; ?></h2>
                         <?php  $max_popular_num= get_theme_mod( 'set_popular_max_num', 4 );
                                $popular_col_num =get_theme_mod( 'set_popular_col_num', 4 );?>
                         <?php echo  do_shortcode( '[products limit="'.$max_popular_num.'" columns="'.$popular_col_num.'" orderby="popularity"]' );?>
                     </div>
                 </section>
-                <section class="new-arrivals">
+                <section class="new-arrivals" >
                 <div class="container">
                 <?php $set_new_arrival_products_heading=get_theme_mod( 'set_new_arrival_products_heading', 'New Arrival  Products'); ?>  
-                    <h2 class="row"><?php echo $set_new_arrival_products_heading; ?></h2>
+                    <h2 class="section-title"><?php echo $set_new_arrival_products_heading; ?></h2>
                       <?php  $set_arrival_max_num=get_theme_mod( 'set_arrival_max_num', 4 );
                              $set_arrival_col_num=get_theme_mod( 'set_arrival_col_num', 4);
                       ?>
@@ -83,8 +83,8 @@ get_header();
                 ?>
                 <section class="deal-of-the-week">
                     <div class="container">
-                      <h2>Deal of the week</h2>
-                        <div class="row d-flex align-items-center"> 
+                      <h2 class="section-title">Deal of the week</h2>
+                        <div class=" d-flex align-items-center"> 
                           <div class="deal-img col-md-6 col-12 ml-auto text-center">
                           <?php echo get_the_post_thumbnail( $deal, 'large', array('class' =>'img-fluid') );?>
                           </div>
@@ -111,8 +111,6 @@ get_header();
                               <?php endif?>
                             </div>
                             <a href="<?php echo esc_url( '?add-to-cart='.$deal ); ?>">Add to Cart</a>
-                            
-
                           </div>
                         </div>
                     </div>
@@ -120,24 +118,37 @@ get_header();
                 <?php endif;?>
                 <?php endif; //woocomerce class excisit?>
                 <section class="news">
+                <?php $set_blog_heading=get_theme_mod( 'set_blog_heading', 'BLOG NEWS'); ?> 
+                  
+                    <?php $args=array(
+                      'post_type'    =>'post',
+                      'posts_per_page'=>2
+                    );
+                    
+                    $blog_posts=new WP_Query($args);
+                    ?>  
                 <div class="container">
-                        <div class="row">
-                        
+                <h3 class="set_blog_heading"><?php echo $set_blog_heading; ?></h3> 
+                    <div class="row">                      
                         <?php 
                         //if there any posts
-                            if(have_posts()):
+                            if($blog_posts->have_posts()):
                                 //load posts
-                            while(have_posts()): the_post();
+                            while($blog_posts->have_posts()): $blog_posts->the_post();
                                 ?>
-                                <article>
-                                    <h2><?php the_title();?></h2>
-                                    <div><?php the_content();?></div>
+                                <article class="col-12 col-md-6">
+                                    <?php if(has_post_thumbnail( )):
+                                    the_post_thumbnail( 'Seba-blog-Size', array('class'=>'img-fluid') );
+                                    endif;?>
+                                    <h3><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
+                                    <div><?php the_excerpt();?></div>
                                 </article>
                                 <?php
                             endwhile;
+                            
                             else:
                                 ?>
-                                <p>No post to display</p>
+                                <p>No Blog to display</p>
                                 <?php
                             endif;
                         

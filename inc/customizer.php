@@ -236,7 +236,25 @@ function seba_customizer($wp_customize){
 				'section'		=> 'sec_home_page',
 				'type'			=> 'number'
 			)
-		);	
+		);
+					//blog heading  in home page
+		$wp_customize->add_Setting(
+			'set_blog_heading',array(
+				'type'     			=>'theme_mod',
+				'default'  			=>'',
+				'sanitize_calback'  =>'sanitize_text_field'
+			)
+		);
+		$wp_customize->add_control(
+			'set_blog_heading',array(
+				'label' 			=>'Blog heading',
+				'description' 		=>'Blog heading',
+				'section' 			=>'sec_home_page',
+				'type'    			=>'text'
+			)
+		);
+		
+		
 
 				
 }
