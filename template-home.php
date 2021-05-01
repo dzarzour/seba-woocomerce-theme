@@ -38,7 +38,7 @@ get_header();
                                       </div>
                                       <div class="slider-description">
                                         <div class="subtitle"><?php the_content();?></div>
-                                        <a href="<?php echo $slider_page_url[$j]?>" class="link"><?php echo $slider_page_button[$j] ?></a>
+                                        <a href="<?php echo esc_url( $slider_page_url[$j])?>" class="link"><?php echo esc_html(  $slider_page_button[$j]) ?></a>
                                       </div>
                                     </div>
                               </div>
@@ -55,21 +55,21 @@ get_header();
                 <?php if(class_exists('WooCommerce')):?>
                 <section class="popular-products" >
                     <div class="container" >
-                         <?php $popular_products_heading=get_theme_mod( 'set_popular_products_heading', 'Popular Products'); ?>
+                         <?php $popular_products_heading=esc_html( get_theme_mod( __('set_popular_products_heading','seba'), 'Popular Products')); ?>
                         <h2 class="section-title"><?php echo $popular_products_heading; ?></h2>
                         <?php  $max_popular_num= get_theme_mod( 'set_popular_max_num', 4 );
                                $popular_col_num =get_theme_mod( 'set_popular_col_num', 4 );?>
-                        <?php echo  do_shortcode( '[products limit="'.$max_popular_num.'" columns="'.$popular_col_num.'" orderby="popularity"]' );?>
+                        <?php echo  do_shortcode( '[products limit="'.esc_attr( $max_popular_num).'" columns="'.esc_attr($popular_col_num).'" orderby="popularity"]' );?>
                     </div>
                 </section>
                 <section class="new-arrivals" >
                 <div class="container">
-                <?php $set_new_arrival_products_heading=get_theme_mod( 'set_new_arrival_products_heading', 'New Arrival  Products'); ?>  
+                <?php $set_new_arrival_products_heading=esc_html(get_theme_mod( __('set_new_arrival_products_heading','seba'), 'New Arrival  Products')); ?>  
                     <h2 class="section-title"><?php echo $set_new_arrival_products_heading; ?></h2>
-                      <?php  $set_arrival_max_num=get_theme_mod( 'set_arrival_max_num', 4 );
-                             $set_arrival_col_num=get_theme_mod( 'set_arrival_col_num', 4);
+                      <?php  $set_arrival_max_num=esc_html(get_theme_mod( 'set_arrival_max_num', 4 ));
+                             $set_arrival_col_num=esc_html(get_theme_mod( 'set_arrival_col_num', 4));
                       ?>
-                      <?php echo do_shortcode( '[products limit="'.$set_arrival_max_num.'" columns="'.$set_arrival_col_num.'" orderby="date"]' );?>
+                      <?php echo do_shortcode( '[products limit="'.esc_attr($set_arrival_max_num).'" columns="'.esc_attr($set_arrival_col_num).'" orderby="date"]' );?>
                     </div>
                 </section>
                 <?php
@@ -83,7 +83,7 @@ get_header();
                 ?>
                 <section class="deal-of-the-week">
                     <div class="container">
-                      <h2 class="section-title">Deal of the week</h2>
+                      <h2 class="section-title"> <?php esc_html__( 'Deal of the week', 'seba' )?></h2>
                         <div class=" d-flex align-items-center"> 
                           <div class="deal-img col-md-6 col-12 ml-auto text-center">
                           <?php echo get_the_post_thumbnail( $deal, 'large', array('class' =>'img-fluid') );?>
@@ -91,12 +91,12 @@ get_header();
                           <div class=" deal-desc col-md-4 col-12 mr-auto text-center">
                             <?php if (!empty($sale)):?>
                             <span class="discount">
-                              <?php echo $discount_precentage.'% OFF'?>
+                              <?php echo $discount_precentage.'% ' .esc_html__( 'OFF', 'seba' )?>
                             </span>  
                             <?php endif; ?>
                             <h3>
-                              <a href="<?php echo get_permalink( $deal ) ?>"><?php echo get_the_title( $deal );?></a>
-                              <p><?php echo get_the_excerpt( $deal )?></p>
+                              <a href="<?php echo  esc_url( get_permalink( $deal )); ?>"><?php echo esc_html( get_the_title( $deal ));?></a>
+                              <p><?php echo esc_html( get_the_excerpt( $deal ))?></p>
                             </h3>
                             <div class="price">
                               <span class="regular">
@@ -137,6 +137,7 @@ get_header();
                             while($blog_posts->have_posts()): $blog_posts->the_post();
                                 ?>
                                 <article class="col-12 col-md-6">
+                                
                                     <?php if(has_post_thumbnail( )):
                                     the_post_thumbnail( 'Seba-blog-Size', array('class'=>'img-fluid') );
                                     endif;?>

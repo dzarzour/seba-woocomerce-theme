@@ -5,11 +5,11 @@
                                     endif;
                                      ?></div>
                                      <div class="meta">
-                                        <p>Published: by <?php the_author_posts_link();?>  on   <?php echo get_the_date();?>
+                                        <p><?php the_author_posts_link();?>  <?php  esc_html_e( 'on', 'seba' )?> <?php echo esc_html( get_the_date() ) ;?>
                                         </br>
-                                        <?php if(has_category()):?>Category:<span > <?php the_category(); endif;?></span>
+                                        <?php if(has_category()):?><?php esc_html_e( 'Category:', 'seba' )?> <span > <?php the_category(' '); endif;?></span>
                                         </br>
-                                        <?php if(has_tag()):?>Tags:<span> <?php the_tags(); endif;?></span> 
+                                        <?php if(has_tag()):?><?php esc_html_e( 'Tags:', 'seba' )?><span> <?php the_tags(); endif;?></span> 
                                         </p>
                                      </div>
                                     <div><?php the_excerpt();?></div>

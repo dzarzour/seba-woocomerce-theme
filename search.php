@@ -11,7 +11,7 @@ get_header();
             <main>                
                 <div class="container">
                         <div class="row">  
-                        <h1>Search result for : <?php echo get_search_query( );?></h1>
+                        <h1><?php esc_html_e( 'Search result for :', 'seba' )?> <?php echo get_search_query( );?></h1>
                         <?php  get_search_form();?>
                         <?php 
                         //if there any posts
@@ -28,8 +28,8 @@ get_header();
                             <div class=" container ">
                                 <?php
                                 the_posts_pagination(  array(
-                                    'prev_text'    =>__('previous','seba'),
-                                    'next_text'    =>__('Next','seba')
+                                    'prev_text'    =>esc_html__('previous','seba'),
+                                    'next_text'    =>esc_html__('Next','seba')
                                 ));
                             
                             

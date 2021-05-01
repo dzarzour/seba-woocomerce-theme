@@ -12,8 +12,8 @@ function seba_customizer($wp_customize){
 
 	$wp_customize->add_section(
 		'sec_copyright', array(
-			'title'			=> 'Copyright Settings',
-			'description'	=> 'Copyright Section'
+			'title'			=> __('Copyright Settings','seba'),
+			'description'	=> __('Copyright Section','seba')
 		)
 	);
 
@@ -28,8 +28,8 @@ function seba_customizer($wp_customize){
 
 			$wp_customize->add_control(
 				'set_copyright', array(
-					'label'			=> 'Copyright',
-					'description'	=> 'Please, add your copyright information here',
+					'label'			=> __('Copyright','seba'),
+					'description'	=>__( 'Please, add your copyright information here','seba'),
 					'section'		=> 'sec_copyright',
 					'type'			=> 'text'
 				)
@@ -37,8 +37,8 @@ function seba_customizer($wp_customize){
 	 //--------------------------------- Slider Section--------------------------------------------------
 	 $wp_customize->add_section(
 		'sec_slider', array(
-			'title'			=> 'Set Slider ',
-			'description'	=> 'Set Slider'
+			'title'			=> __( 'Set Slider ','seba'),
+			'description'	=>  __('Set Slider','seba'),
 		)
 	);
 			
@@ -57,8 +57,8 @@ function seba_customizer($wp_customize){
 
 			$wp_customize->add_control(
 				'set_slider_page'.$i, array(
-					'label'			=> 'Set Slider page '.$i,
-					'description'	=> 'chooce you page from list',
+					'label'			=>  __('Set Slider page '.$i,'seba'),
+					'description'	=>  __('chooce you page from list','seba'),
 					'section'		=> 'sec_slider',
 					'type'			=> 'dropdown-pages'
 				)
@@ -75,8 +75,8 @@ function seba_customizer($wp_customize){
 
 			$wp_customize->add_control(
 				'set_slider_button_text'.$i, array(
-					'label'			=> 'Button text for page '.$i,
-					'description'	=> 'Button text for page '.$i,
+					'label'			=> __('Button text for page '.$i,'seba'),
+					'description'	=> __('Button text for page '.$i,'seba'),
 					'section'		=> 'sec_slider',
 					'type'			=> 'text'
 				)
@@ -92,8 +92,8 @@ function seba_customizer($wp_customize){
 
 			$wp_customize->add_control(
 				'set_slider_URL'.$i, array(
-					'label'			=> 'page 3 URL',
-					'description'	=> 'ENTER url for page '.$i,
+					'label'			=> __('page 3 URL','seba'),
+					'description'	=> __('ENTER url for page '.$i,'seba'),
 					'section'		=> 'sec_slider',
 					'type'			=> 'url'
 				)
@@ -104,8 +104,8 @@ function seba_customizer($wp_customize){
 		//--------------------------------- Home page settings--------------------------------------------------
 		$wp_customize->add_section(
 			'sec_home_page', array(
-			'title'			=> 'Home page products and blog settings ',
-			'description'	=> 'Home Page Section'
+			'title'			=> __('Home page products and blog settings ','seba'),
+			'description'	=> __('Home Page Section','seba'),
 			)
 		);
 
@@ -121,8 +121,8 @@ function seba_customizer($wp_customize){
 		);
 		$wp_customize->add_control(
 			'set_popular_products_heading',array(
-				'label' 			=>'popular product heading',
-				'description' 		=>'write popular product heading',
+				'label' 			=>__('popular product heading','seba'),
+				'description' 		=>__('write popular product heading','seba'),
 				'section' 			=>'sec_home_page',
 				'type'    			=>'text'
 			)
@@ -137,8 +137,8 @@ function seba_customizer($wp_customize){
 		);
 		$wp_customize->add_control(
 			'set_popular_max_num', array(
-				'label'			=> 'popular products Max numbers',
-				'description'	=> 'popular products Max numbers',
+				'label'			=>__( 'popular products Max numbers','seba'),
+				'description'	=>__( 'popular products Max numbers','seba'),
 				'section'		=> 'sec_home_page',
 				'type'			=> 'number'
 			)
@@ -153,8 +153,8 @@ function seba_customizer($wp_customize){
 
 		$wp_customize->add_control(
 			'set_popular_col_num',array(
-				'label'   		=>'popular products max Column',
-				'description'	=>'popular products max Column',
+				'label'   		=>__('popular products max Column','seba'),
+				'description'	=>__('popular products max Column','seba'),
 				'section'       =>'sec_home_page',
 				'type'			=> 'number'
 			)
@@ -169,8 +169,8 @@ function seba_customizer($wp_customize){
 		);
 		$wp_customize->add_control(
 			'set_new_arrival_products_heading',array(
-				'label' 			=>'new arrival product heading',
-				'description' 		=>'write new_arrival products heading',
+				'label' 			=>__('new arrival product heading','seba'),
+				'description' 		=>__('write new_arrival products heading','seba'),
 				'section' 			=>'sec_home_page',
 				'type'    			=>'text'
 			)
@@ -185,8 +185,8 @@ function seba_customizer($wp_customize){
 		);
 		$wp_customize->add_control(
 			'set_arrival_max_num', array(
-				'label'			=> 'new arrival products Max numbers',
-				'description'	=> ' new arrival products Max numbers',
+				'label'			=> __('new arrival products Max numbers','seba'),
+				'description'	=> __(' new arrival products Max numbers','seba'),
 				'section'		=> 'sec_home_page',
 				'type'			=> 'number'
 			)
@@ -200,8 +200,8 @@ function seba_customizer($wp_customize){
 		);
 		$wp_customize->add_control(
 			'set_arrival_col_num',array(
-				'label'   		=>'New arrival products max Column',
-				'description'	=>'New arrival products max Column',
+				'label'   		=>__('New arrival products max Column','seba'),
+				'description'	=>__('New arrival products max Column','seba'),
 				'section'       =>'sec_home_page',
 				'type'			=> 'number'
 			)
@@ -216,8 +216,8 @@ function seba_customizer($wp_customize){
 		);
 		$wp_customize->add_control(
 			'set_deal_show', array(
-				'label'			=> 'Show deal of the Deal of the week ',
-				'section'		=> 'sec_home_page',
+				'label'			=> __('Show deal of the Deal of the week ','seba'),
+				'section'		=> __('sec_home_page','seba'),
 				'type'			=> 'checkbox'
 			)
 		);	
@@ -231,8 +231,8 @@ function seba_customizer($wp_customize){
 		);
 		$wp_customize->add_control(
 			'set_deal', array(
-				'label'			=> 'Deal of the week product ID',
-				'description'	=> 'Product ID TO display',
+				'label'			=> __('Deal of the week product ID','seba'),
+				'description'	=>__( 'Product ID TO display','seba'),
 				'section'		=> 'sec_home_page',
 				'type'			=> 'number'
 			)
@@ -247,8 +247,8 @@ function seba_customizer($wp_customize){
 		);
 		$wp_customize->add_control(
 			'set_blog_heading',array(
-				'label' 			=>'Blog heading',
-				'description' 		=>'Blog heading',
+				'label' 			=>__('Blog heading','seba'),
+				'description' 		=>__('Blog heading','seba'),
 				'section' 			=>'sec_home_page',
 				'type'    			=>'text'
 			)

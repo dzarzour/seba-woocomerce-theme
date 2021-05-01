@@ -27,8 +27,8 @@ get_header();
                             <div class=" container ">
                                 <?php
                                 the_posts_pagination(  array(
-                                    'prev_text'    =>__('previous','seba'),
-                                    'next_text'    =>__('Next','seba')
+                                    'prev_text'    =>esc_html__('previous','seba'),
+                                    'next_text'    =>esc_html__('Next','seba')
                                 ));
                             
                             

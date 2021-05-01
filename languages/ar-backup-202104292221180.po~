@@ -1,0 +1,315 @@
+# Blank WordPress Pot
+# Copyright 2014 ...
+# This file is distributed under the GNU General Public License v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: seba v1.0.0\n"
+"POT-Creation-Date: 2021-04-30 00:59+0300\n"
+"PO-Revision-Date: 2021-04-29 22:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: العربية\n"
+"Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100 >= 3 "
+"&& n%100<=10 ? 3 : n%100 >= 11 && n%100<=99 ? 4 : 5;\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:"
+"1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"Language: ar\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Poedit-SearchPath-0: .\n"
+"\n"
+"X-Loco-Version: 2.5.2; wp-5.7"
+
+#: 404.php:16
+msgid "Page Not Found"
+msgstr ""
+
+#: 404.php:18
+msgid ""
+"The page you were looking for could not be found. It might have been removed,"
+" renamed, or did not exist in the first place."
+msgstr ""
+
+#: 404.php:21
+msgid "Take a look  at our  Latest  Posts"
+msgstr ""
+
+#: archive.php:30 index.php:35 search.php:31
+msgid "previous"
+msgstr ""
+
+#: archive.php:31 index.php:36 search.php:32
+msgid "Next"
+msgstr ""
+
+#: comments.php:32
+msgid "Leave a comment"
+msgstr ""
+
+#: comments.php:35
+#, php-format
+msgctxt "comments title"
+msgid "One reply on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:40
+#, php-format
+msgctxt "comments title"
+msgid "%1$s reply on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s replies on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:66
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:67
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:80
+msgid "Comments"
+msgstr ""
+
+#: comments.php:119
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:47
+msgid "copyright by Seba them"
+msgstr ""
+
+#: functions.php:41
+msgid "Seba Main Menu"
+msgstr ""
+
+#: functions.php:42
+msgid "Seba Footer Menu"
+msgstr ""
+
+#: functions.php:110
+msgid "Seba Sidebar"
+msgstr ""
+
+#: functions.php:112
+msgid "Drag and drop your widget here"
+msgstr ""
+
+#: functions.php:119
+msgid "Seba Sidebar shop"
+msgstr ""
+
+#: functions.php:121
+msgid "Drag and drop your widget  for shop page "
+msgstr ""
+
+#: functions.php:128
+msgid "Seba footer section 1"
+msgstr ""
+
+#: functions.php:130
+msgid "Drag and drop your widget  for footer 1 "
+msgstr ""
+
+#: functions.php:137
+msgid "Seba footer section 2"
+msgstr ""
+
+#: functions.php:139
+msgid "Drag and drop your widget  for footer 2 "
+msgstr ""
+
+#: functions.php:146
+msgid "Seba footer section 3"
+msgstr ""
+
+#: functions.php:148
+msgid "Drag and drop your widget  for footer 3 "
+msgstr ""
+
+#: header.php:54
+msgid "My account"
+msgstr ""
+
+#: header.php:55
+msgid "Logout"
+msgstr ""
+
+#: header.php:59
+msgid "Login|Register"
+msgstr ""
+
+#: header.php:75
+msgid "Toggle navigation"
+msgstr ""
+
+#: inc/class-wp-bootstrap-navwalker.php:369
+msgid "Add a menu"
+msgstr ""
+
+#: inc/customizer.php:15
+msgid "Copyright Settings"
+msgstr ""
+
+#: inc/customizer.php:16
+msgid "Copyright Section"
+msgstr ""
+
+#: inc/customizer.php:31
+msgid "Copyright"
+msgstr ""
+
+#: inc/customizer.php:32
+msgid "Please, add your copyright information here"
+msgstr ""
+
+#: inc/customizer.php:40
+msgid "Set Slider "
+msgstr ""
+
+#: inc/customizer.php:41
+msgid "Set Slider"
+msgstr ""
+
+#: inc/customizer.php:60
+msgid "Set Slider page "
+msgstr ""
+
+#: inc/customizer.php:61
+msgid "chooce you page from list"
+msgstr ""
+
+#: inc/customizer.php:78 inc/customizer.php:79
+msgid "Button text for page "
+msgstr ""
+
+#: inc/customizer.php:95
+msgid "page 3 URL"
+msgstr ""
+
+#: inc/customizer.php:96
+msgid "ENTER url for page "
+msgstr ""
+
+#: inc/customizer.php:107
+msgid "Home page products and blog settings "
+msgstr ""
+
+#: inc/customizer.php:108
+msgid "Home Page Section"
+msgstr ""
+
+#: inc/customizer.php:124
+msgid "popular product heading"
+msgstr ""
+
+#: inc/customizer.php:125
+msgid "write popular product heading"
+msgstr ""
+
+#: inc/customizer.php:140 inc/customizer.php:141
+msgid "popular products Max numbers"
+msgstr ""
+
+#: inc/customizer.php:156 inc/customizer.php:157
+msgid "popular products max Column"
+msgstr ""
+
+#: inc/customizer.php:172
+msgid "new arrival product heading"
+msgstr ""
+
+#: inc/customizer.php:173
+msgid "write new_arrival products heading"
+msgstr ""
+
+#: inc/customizer.php:188
+msgid "new arrival products Max numbers"
+msgstr ""
+
+#: inc/customizer.php:189
+msgid " new arrival products Max numbers"
+msgstr ""
+
+#: inc/customizer.php:203 inc/customizer.php:204
+msgid "New arrival products max Column"
+msgstr ""
+
+#: inc/customizer.php:219
+msgid "Show deal of the Deal of the week "
+msgstr ""
+
+#: inc/customizer.php:220
+msgid "sec_home_page"
+msgstr ""
+
+#: inc/customizer.php:234
+msgid "Deal of the week product ID"
+msgstr ""
+
+#: inc/customizer.php:235
+msgid "Product ID TO display"
+msgstr ""
+
+#: inc/customizer.php:250 inc/customizer.php:251
+msgid "Blog heading"
+msgstr ""
+
+#: search.php:14
+msgid "Search result for :"
+msgstr ""
+
+#: searchform.php:14
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:15
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:16
+msgctxt "submit button"
+msgid ""
+msgstr ""
+
+#: template-home.php:58
+msgid "set_popular_products_heading"
+msgstr ""
+
+#: template-home.php:67
+msgid "set_new_arrival_products_heading"
+msgstr ""
+
+#: template-home.php:86
+msgid "Deal of the week"
+msgstr ""
+
+#: template-home.php:94
+msgid "OFF"
+msgstr ""
+
+#: template-parts/content-archive.php:8 template-parts/content-search.php:8
+msgid "on"
+msgstr ""
+
+#: template-parts/content-archive.php:10 template-parts/content-search.php:10
+#: template-parts/content.php:10
+msgid "Category:"
+msgstr ""
+
+#: template-parts/content-archive.php:12 template-parts/content-search.php:12
+#: template-parts/content.php:12
+msgid "Tags:"
+msgstr ""
+
+#: template-parts/content.php:8
+msgid "on:"
+msgstr ""
